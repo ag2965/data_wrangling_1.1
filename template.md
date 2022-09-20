@@ -211,3 +211,50 @@ read_csv("data/FAS_litters.csv",na=c("", 999,88), skip=2)
 ```
 
 \##Other file formats
+
+We need to read in an excel spreadsheet…
+
+``` r
+mlb_df=read_excel("data/mlb11.xlsx")
+```
+
+``` r
+view(mlb_df)
+```
+
+``` r
+lotr_words_df=
+  read_excel(
+    "data/LotR_Words.xlsx",
+    range="B3:D6"
+  )
+```
+
+\##Still more formats…
+
+Read in a SAS dataset.
+
+``` r
+pulse_df=read_sas("data/public_pulse_data.sas7bdat")
+```
+
+\##Data export
+
+``` r
+write_csv(lotr_words_df, file="data/lotr_words_df.csv")
+```
+
+\##Why not base r??
+
+``` r
+dont_do_this_df=read_csv("data/FAS_litters.csv")
+```
+
+    ## Rows: 49 Columns: 8
+    ## ── Column specification ────────────────────────────────────────────────────────
+    ## Delimiter: ","
+    ## chr (2): Group, Litter Number
+    ## dbl (6): GD0 weight, GD18 weight, GD of Birth, Pups born alive, Pups dead @ ...
+    ## 
+    ## ℹ Use `spec()` to retrieve the full column specification for this data.
+    ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
